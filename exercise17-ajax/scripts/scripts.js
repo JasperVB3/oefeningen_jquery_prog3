@@ -1,0 +1,5 @@
+$(function() {
+  
+  $('#no-script').remove();
+
+});
