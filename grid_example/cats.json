@@ -1,0 +1,22 @@
+[{
+    "_id": "591f98883b90f7150a19c281",
+    "__v": 0,
+    "text": "Cats' hearing is much more sensitive than humans and dogs.",
+    "updatedAt": "2018-10-18T23:01:03.980Z",
+    "createdAt": "2018-04-23T20:20:02.517Z",
+    "deleted": false,
+    "type": "cat",
+    "source": "api",
+    "used": false
+}, {
+    "_id": "58e00a000aac31001185ed15",
+    "user": "58e007480aac31001185ecef",
+    "text": "Female cats are typically right-pawed while male cats are typically left-pawed.",
+    "__v": 0,
+    "updatedAt": "2018-10-22T20:20:02.452Z",
+    "createdAt": "2018-01-05T21:20:03.882Z",
+    "deleted": false,
+    "type": "cat",
+    "source": "user",
+    "used": true
+}]
