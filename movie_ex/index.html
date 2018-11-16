@@ -17,16 +17,14 @@
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand"><span class="fa fa-bell-o"></span></a>
+            <a class="navbar-brand"><span class="fa fa-bell-o"></span> Now playing</a>
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Kies per genre
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-menu" id="genres" aria-labelledby="navbarDropdownMenuLink">
+
                 </div>
             </div>
             <form class="form-inline ali">
@@ -38,9 +36,27 @@
     </header>
     <article>
         <div class="container-fluid row" id="movies">
-            
+
         </div>
     </article>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieTitleModal"></h5>
+                </div>
+                <div class="modal-body" id="movieDescriptionModal">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>

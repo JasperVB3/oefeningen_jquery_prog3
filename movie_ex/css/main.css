@@ -2,6 +2,19 @@
     color: #28a745;
 }
 
+.navbar-brand{
+    color: #28a745;
+}
+
+.card-text{
+    height: 20vh;
+    overflow: hidden;
+}
+
 #navbarDropdownMenuLink {
     color: #28a745;
+}
+
+article{
+    margin-left: 2%;
 }

@@ -1,65 +1,130 @@
 $(function () {
-    var token = "15bcc5f6d929d4cd0d023c93f3950d7d";
-    var baseUrl = "https://api.themoviedb.org/3/movie/550?api_key=15bcc5f6d929d4cd0d023c93f3950d7d";
-
-    $.ajax({
-        type: 'GET',
-        url: 'https://api.themoviedb.org/3/trending/movie/week?api_key=15bcc5f6d929d4cd0d023c93f3950d7d',
-        success: function (data) {
-            $.each(data.results,function(){
-                $("#movies").append(card(this));
-            });
-        }
-    });
-
-    var card = function (movie){
-        var div = $("<div></div>")
-        .addClass("card")
-        .css({"width":"18rem","margin":"2%"})
-        .append(img(movie.poster_path))
-        .append(cardBody(movie.original_title,movie.overview))
-        return div;
-    };
-    var img = function(imageUrl){
-        var url = "https://image.tmdb.org/t/p/w500"
-        var im = $('<img class="card-img-top" src="'+url+imageUrl+'" alt="Card image cap">');
-        return im;
-    };
-    var cardBody = function(title,text){
-        var div= $("<div></div>");
-        div.addClass("card-body");
-        var title = $("<h5></h5>").addClass("card-title").append(title);
-        var p = $("<p></p>").addClass("card-text").append(text);
-        div.append(title);
-        div.append(p);
-        return div;
+    if (movies == null || movies == 'undifined') {
+        getNowPlaying();
     }
+
+    if (genres == null || genres == 'undifined') {
+        getGenres();
+    }
+
+    $(this).on("click", ".dropdown-item", function (event) {
+        getByGenre($(this).attr("id"));
+        $("#navbarDropdownMenuLink").html($(this).text());
+    })
+
 });
 
 
-/*
-{
-  "page": 1,
-  "results": [
-    {
-      "adult": false,
-      "backdrop_path": "/mabuNsGJgRuCTuGqjFkWe1xdu19.jpg",
-      "genre_ids": [
-        28,
-        12,
-        16,
-        10751
-      ],
-      "id": 260513,
-      "original_language": "en",
-      "original_title": "Incredibles 2",
-      "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
-      "poster_path": "/x1txcDXkcM65gl7w20PwYSxAYah.jpg",
-      "release_date": "2018-06-14",
-      "title": "Incredibles 2",
-      "video": false,
-      "vote_average": 7.6,
-      "vote_count": 3599,
-      "popularity": 112.582
-    },
-*/
+let token = "15bcc5f6d929d4cd0d023c93f3950d7d";
+let baseUrl = "https://api.themoviedb.org/3/movie/";
+let genreUrl = "https://api.themoviedb.org/3/genre/movie/list";
+let nowPlaying = "now_playing";
+var movies;
+var genres;
+let lang = "nl-BE";
+
+//retrieve the genres for the dropdown menu
+function getGenres() {
+    $.ajax({
+        type: 'GET',
+        url: genreUrl,
+        data: {
+            api_key: token,
+            language: lang
+        },
+        success: function (data) {
+            genres = data.genres;
+            setGenres();
+        }
+    })
+}
+
+//set the genres as dropdown items
+function setGenres() {
+    if (genres == null || genres == 'undifined') {
+        getGenres();
+    } else {
+        var dropdown = $("#genres");
+        $.each(genres, function () {
+            dropdown.append('<a class="dropdown-item" id="' + this.id + '" href="#">' + this.name + '</a>')
+        })
+    }
+}
+
+//Get the movies now playing in theaters
+function getNowPlaying() {
+    $.ajax({
+        type: 'GET',
+        url: baseUrl + nowPlaying,
+        data: {
+            api_key: token,
+            language: lang
+        },
+        success: function (data) {
+            movies = data.results;
+            setMovies(movies);
+        }
+    });
+}
+
+
+//filter out the movies with the given genre
+function getByGenre(genre_id) {
+    if (movies == null || movies == 'undifined') {
+        getNowPlaying();
+    } else {
+        var moviesByGenre = [];
+        $.each(movies, function () {
+            var movie = this;
+            $.each(movie.genre_ids, function () {
+                if (this == genre_id) {
+                    moviesByGenre.push(movie);
+                }
+            })
+        });
+        setMovies(moviesByGenre);
+    }
+
+}
+
+//set the movies in the movie container
+function setMovies(data) {
+    $("#movies").empty();
+    $.each(data, function () {
+        $("#movies").append(card(this));
+    });
+}
+
+//create a bootstrap card 
+var card = function (movie) {
+    var div = $("<div></div>")
+        .addClass("card")
+        .addClass("bg-light")
+        .addClass("flex-column")
+        .css({
+            "width": "18rem",
+            "margin": "2%"
+        })
+        .append(img(movie.poster_path))
+        .append(cardBody(movie.original_title, movie.overview))
+    return div;
+};
+
+//create an image for the bootstrap card
+var img = function (imageUrl) {
+    var url = "https://image.tmdb.org/t/p/w500"
+    var im = $('<img class="card-img-top" src="' + url + imageUrl + '" alt="Card image cap">');
+    return im;
+};
+
+//create the card body
+var cardBody = function (title, text) {
+    var div = $("<div></div>");
+    div.addClass("card-body");
+    var title = $("<h5></h5>").addClass("card-title").append(title);
+    var p = $("<p></p>").addClass("card-text").append(text);
+    div.append(title);
+    div.append(p);
+    div.append('<a href="#" class="btn btn-outline-success align-self-baseline" data-toggle="modal" data-target=".bd-example-modal-lg">More info</a>')
+    return div;
+}
