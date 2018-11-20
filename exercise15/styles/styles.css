@@ -1,0 +1,99 @@
+body {
+	background: #816687;
+	font-family: Arial, sans-serif;
+}
+article {
+  float: left;
+	margin: 10px;
+	border: solid 1pt #000;
+	padding: 15px;
+	background: #C0D0D0;
+  width: 1175px;
+}
+#no-script {
+	margin: 10px;
+	border: solid 1pt #000;
+	padding: 15px;
+	text-align: center;
+	background: #FF0000;
+	font-weight: bold;
+	font-size: 28px;
+}
+#main {
+  position: relative;
+  margin-top: 50px;
+}
+#menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+#menu, #menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#menu li {
+  float: left;
+  background: #C0D0D0;
+}
+
+#menu a {
+  display: block;
+  width: 150px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#menu li:hover {
+  background: #826c4b;
+}
+
+#menu li ul {
+  position: absolute;
+  left: -999em;
+  width: 160px;
+}
+
+#menu li:hover ul, #menu li ul:hover {
+  left:auto;
+}
+
+#accordion {
+  float: left;
+  width: 300px;
+  font-size: 12pt;
+  font-family: Arial, sans-serif;
+}
+
+#accordion ul {
+  padding: 0;
+  margin: 0;
+}
+
+#accordion li:hover {
+  background: #826c4b;
+}
+
+#accordion a {
+  text-decoration: none;
+}
+
+#tabs {
+  float: left;
+  width: 60%;
+  height: 100%;
+  font-size: 12pt;
+  font-family: Arial, sans-serif;
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	border: 1px solid #333;
+	background-color: #ffed8a;
+	padding: 2px 6px;
+}

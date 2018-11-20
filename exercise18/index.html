@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Form</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui.min.css" />
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Form</h1>
+    </div>
+    <div id="main">
+      <p id="no-script">You do not have JavaScript enabled! For a better experience, please use a
+      JavaScript enabled browser!</p>
+      <form action="">
+        <fieldset>
+          <legend>Create a New Book</legend>
+          <div>
+            <label for="isbn">ISBN:</label>
+            <input name="isbn" id="isbn" type="text" />
+          </div>
+          <div>
+            <label for="title">Title:</label>
+            <input name="title" id="title" type="text" />
+          </div>
+          <div>
+            <label for="author">Author:</label>
+            <input name="author" id="author" type="text" />
+          </div>
+          <div>
+            <label for="publication">Publication:</label>
+            <input name="publication" id="publication" type="text" />
+          </div>
+          <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" class="maxlength"></textarea>
+          </div>
+          <div>
+            <label for="pages">Pages:</label>
+            <input name="pages" id="pages" type="text" disabled/>
+          </div>
+          <input type="submit" value="Submit!" />
+        </fieldset>
+      </form>
+      <div id="dialog" title="Confirmation">
+	     <p>This is the data you will send to the server:</p>
+	     <div id="contents"></div>
+      </div>
+    </div>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+   <script src="scripts/jquery.validate.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+.nav{
+    text-align: right;
+    float: right;
+    list-style: none;
+    padding-left: 10px;
+}
+
+#main {
+    border: 1px solid gray;
+}
+
+#top {
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+}
+
+.left {
+  float: left;
+  padding: 5px;
+  width: 49%;
+  border-right: 1px solid gray;
+  height: 900px;
+}
+
+.right {
+  float: right;
+  padding: 5px;
+  width: 49%;
+  border-left: 1px solid gray;
+  height: 900px;
+}
+
+.red {
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.green {
+  color: #00FF00;
+}
+
+.bargain{
+  list-style-image:url('../images/coins.png');
+}
+
+.no-image {
+  list-style-image: none;
+}

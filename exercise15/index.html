@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Menu</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+
+  </head>
+  <body>
+    <ul id="menu">
+      <li>
+        <a href="#">News</a>
+        <ul class="active">
+          <li>
+            <a href="#">Weekly promotions</a>
+          </li>
+          <li>
+            <a href="#">Popular books</a>
+          </li>
+          <li>
+            <a href="#">New books</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Book information</a>
+        <ul>
+          <li>
+            <a href="#">Book summaries</a>
+          </li>
+          <li>
+            <a href="#">Book reviews</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Categories</a>
+        <ul>
+          <li>
+            <a href="#">Fantasy</a>
+          </li>
+          <li>
+            <a href="#">Fiction</a>
+          </li>
+          <li>
+            <a href="#">Non-Fiction</a>
+          </li>
+          <li>
+            <a href="#">Programming</a>
+          </li>
+          <li>
+            <a href="#">Other</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Member area</a>
+        <ul>
+          <li>
+            <a href="#">Buy book</a>
+          </li>
+          <li>
+            <a href="#">Add new book</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div id="main">
+      <p id="no-script">You do not have JavaScript enabled! For a better experience, please use a
+      JavaScript enabled browser!</p>
+      <div id="accordion">
+        <h3>
+          <a href="#">News</a>
+        </h3>
+        <div>
+          <ul>
+            <li>
+              <a href="#">Weekly promotions</a>
+            </li>
+            <li>
+              <a href="#">Popular books</a>
+            </li>
+            <li>
+              <a href="#">New books</a>
+            </li>
+          </ul>
+        </div>
+        <h3>
+          <a href="#">Book information</a>
+        </h3>
+        <div>
+          <ul>
+            <li>
+              <a href="#">Book summaries</a>
+            </li>
+            <li>
+              <a href="#">Book reviews</a>
+            </li>
+          </ul>
+        </div>
+        <h3>
+          <a href="#">Categories</a>
+        </h3>
+        <div>
+          <ul>
+            <li>
+              <a href="#">Fantasy</a>
+            </li>
+            <li>
+              <a href="#">Fiction</a>
+            </li>
+            <li>
+              <a href="#">Non-Fiction</a>
+            </li>
+            <li>
+              <a href="#">Programming</a>
+            </li>
+            <li>
+              <a href="#">Other</a>
+            </li>
+          </ul>
+        </div>
+        <h3>
+          <a href="#">Member area</a>
+        </h3>
+        <div>
+          <ul>
+            <li>
+              <a href="#">Buy book</a>
+            </li>
+            <li>
+              <a href="#">Add new book</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="tabs">
+        <ul>
+          <li>
+            <a href="#news"><span>News</span></a>
+          </li>
+          <li>
+            <a href="#books"><span>Books</span></a>
+          </li>
+          <li>
+            <a href="#covers"><span>Covers</span></a>
+          </li>
+          <li>
+            <a href="#promotion" title="Check out all the interesting promotions on books" class="promo"><span>Promotion</span></a>
+          </li>
+        </ul>
+        <div id="news">
+          <p>News information here</p>
+        </div>
+        <div id="books">
+          <p>Books information here</p>
+        </div>
+        <div id="covers">
+          <p>Covers come here</p>
+        </div>
+        <div id="promotion">
+          <p>Here is the promotions coupon!</p>
+        </div>
+      </div>
+    </div>
+     
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/jquery.hoverIntent.minified.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
